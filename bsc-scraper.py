@@ -42,7 +42,7 @@ def check(context: telegram.ext.CallbackContext):
             print("new token found")
             token_list[token] = True
             name,ticker,supply,holders = get_data(token)
-            context.bot.send_message(chat_id = "@BscNewTokens", text = "NEW TOKEN FOUND\n\n" + "Name: " + name + "\nTicker: " + ticker + "\nSupply: " + supply + "\nHolders: " + holders + "\n\nhttps://bscscan.com" + token)
+            context.bot.send_message(chat_id = "@bsctokenleri", text = "NEW TOKEN FOUND\n\n" + "Name: " + name + "\nTicker: " + ticker + "\nSupply: " + supply + "\nHolders: " + holders + "\n\nhttps://bscscan.com" + token)
             
 
 def get_data(token):
