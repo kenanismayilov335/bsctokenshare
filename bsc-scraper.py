@@ -8,7 +8,7 @@ import pickle
 import os
 
 url = "https://bscscan.com/tokentxns"
-telegram_token = "5849295980:AAE7Cw7BKY2v042rNgeeUbDBZxLKSq6KPlQ"
+telegram_token = "5767154208:AAEcjjovrfUWvFEoJeRaedgT-KvE-lrB-0I"
 token_list = dict()
 
 def start_command(update,context):
@@ -42,7 +42,7 @@ def check(context: telegram.ext.CallbackContext):
             print("new token found")
             token_list[token] = True
             name,ticker,supply,holders = get_data(token)
-            context.bot.send_message(chat_id = "@bsctokenleri", text = "NEW TOKEN FOUND\n\n" + "Name: " + name + "\nTicker: " + ticker + "\nSupply: " + supply + "\nHolders: " + holders + "\n\nhttps://bscscan.com" + token)
+            context.bot.send_message(chat_id = "@devtestler", text = "NEW TOKEN FOUND\n\n" + "Name: " + name + "\nTicker: " + ticker + "\nSupply: " + supply + "\nHolders: " + holders + "\n\nhttps://bscscan.com" + token)
             
 
 def get_data(token):
@@ -99,4 +99,5 @@ def main():
     updater.start_polling()
 
 if __name__ == '__main__':
+
     main()
